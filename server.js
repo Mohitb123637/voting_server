@@ -14,6 +14,10 @@ const candidateRoutes = require('./routes/candidateRoute.js');
 app.use('/user', userRoutes);
 app.use('/candidate', candidateRoutes);
 
+app.get('/', (req, res) => {
+  res.send('Welcome to Voting');
+});
+
 app.listen(port, () => {
   console.log(`Server is running on port ${port}`);
 });
