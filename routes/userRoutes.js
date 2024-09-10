@@ -22,7 +22,7 @@ router.post('/signup', async (req, res) => {
       id: response.id,
     };
 
-    console.log('Payload is saved successfully', JSON.stringify(payload)); // Corrected `json.stringify` to `JSON.stringify`
+    console.log('Payload is saved successfully', JSON.stringify(payload));
 
     const token = generateToken(payload);
     console.log('Token is saved successfully');

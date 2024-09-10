@@ -16,7 +16,7 @@ const generate = async (prompt) => {
   }
 };
 
-router.get('/', jwtAuthMiddleware, async (req, res) => {
+router.post('/', jwtAuthMiddleware, async (req, res) => {
   try {
     const question = req.body.question;
     if (!question) {
