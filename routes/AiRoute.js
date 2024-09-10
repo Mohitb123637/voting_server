@@ -45,3 +45,5 @@ router.get('/all', jwtAuthMiddleware, async (req, res) => {
     res.status(500).json({ error: error.message });
   }
 });
+
+module.exports = router;
