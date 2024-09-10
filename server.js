@@ -11,8 +11,11 @@ const port = process.env.PORT || 5000;
 
 const userRoutes = require('./routes/userRoutes.js');
 const candidateRoutes = require('./routes/candidateRoute.js');
+const aiRoutes = require('./routes/AiRoute.js');
+
 app.use('/user', userRoutes);
 app.use('/candidate', candidateRoutes);
+app.use('/ai', aiRoutes);
 
 app.get('/', (req, res) => {
   res.send('Welcome to Voting');
