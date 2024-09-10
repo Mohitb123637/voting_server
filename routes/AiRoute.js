@@ -38,12 +38,10 @@ router.post('/', jwtAuthMiddleware, async (req, res) => {
 
 router.get('/all', jwtAuthMiddleware, async (req, res) => {
   try {
-    const interactions = await UserInteraction.find();
+    const interactions = await UserInteraction.find({ userId: req.user.id });
     res.send(interactions);
   } catch (error) {
     console.error('Error fetching chat data', error);
     res.status(500).json({ error: error.message });
   }
 });
-
-module.exports = router;
